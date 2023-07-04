@@ -7,7 +7,15 @@
 
 :root {
   font-family: 'Montserrat', sans-serif;
-  --whtie-color: #fffff;
+  --white-color: #fffffF;
   --text-color: #252B42;
   --second-text-color: #737373;
+  --success-color: #2DC071;
+  --blue: #23A6F0
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+  box-shadow: inset 3px 3px 10px #000;
 }
