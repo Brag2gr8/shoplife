@@ -9,16 +9,24 @@ header {
     justify-content: space-between;
 }
 
+.large-screen-menu {
+    display: none;
+}
+
 .icon-container {
     display: flex;
     gap: 30px;
+}
+
+.login {
+    display: none;
 }
 
 i {
     font-size: 24px;
 }
 
-.menu-list {
+#menu-list {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -27,10 +35,44 @@ i {
     color: var(--second-text-color);
     font-size: 30px;
     margin-top: 50px;
+    height: fit-content;
 }
 
+#large {display: none;}
+#small {display: block;}
+
 @media (min-width: 750px) {
-    .mobile-nav {
-        display: none;
+
+    #small {display: none}
+    #large {display: block}
+    
+    #menu-list {display: none}
+    .icon-container {color: var(--blue)}
+
+    .login {
+        display: flex;
+        gap: 5px;
+        align-self: end;
+    }
+
+    .login > i { 
+        font-size: 14px;
+    }
+
+    .login > span {
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .large-screen-menu {
+        display: flex;
+        font-size: 14px;
+        font-weight: 700;
+        gap: 25px;
+        color: var(--second-text-color);
+    }
+
+    .large-screen-menu > span:hover {
+        color: var(--blue);
     }
 }

@@ -5,7 +5,7 @@ import {
   createRoutesFromElements, 
   Route 
 } from "react-router-dom";
-import Header from "./components/header/Header";
+import Header from "./pages/home/Home";
 
 const movieLife = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Header />} />
