@@ -10,7 +10,7 @@ const Header = () => {
         <header>
             <nav className="nav">
                 <div>
-                    <h1>ShopLife</h1>
+                    <a href="/" className="logo-name">ShopLife</a>
                     <div className="large-screen-menu">
                         <span>Products</span>
                         <span>Categories</span>

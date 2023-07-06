@@ -1,0 +1,114 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 10px var(--blue);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card-img-container {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.product-card-price {
+    display: flex;
+    gap: 15px
+}
+.product-card-price > p {color: var(--second-text-color);}
+
+.product-card-img-container > img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-card-img-container > span {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    border-radius: 3px;
+    color: #fff;
+    background: rebeccapurple;
+    padding: 5px;
+}
+
+.product-card-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.product-card-rating-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.product-card-rating-favorite > i {
+    font-size: 30px;
+    color: red;
+}
+
+.product-card-rating {
+    gap: 5px;
+}
+
+.product-card-rating > span {
+    font-size: 14px;
+    color: brown;
+}
+
+.product-card-cart-btns {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 10px;
+    margin: 15px 0;
+    color: #fff;
+}
+
+.product-card-cart-btns > i {
+    font-size: 13px;
+    background: var(--blue);
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 700;
+}
+
+.product-card-cart-btns > button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: var(--blue);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.product-card-sales {
+    display: flex;
+    padding-left: 10px;
+    font-weight: 700;
+    color: var(--second-text-color);
+    font-size: 14px;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.product-card-sales > i {
+    font-size: 16px;
+}

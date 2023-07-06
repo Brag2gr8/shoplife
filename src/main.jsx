@@ -1,22 +1,26 @@
 import ReactDOM from 'react-dom/client';
-import { 
-  createBrowserRouter, 
-  RouterProvider, 
-  createRoutesFromElements, 
-  Route 
-} from "react-router-dom";
-import Header from "./pages/home/Home";
-
-const movieLife = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Header />} />
-    
-));
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import HomeLayout from "./components/HomeLayout";
+import Products from "./pages/products/Products";
+import { ProductsProvider } from './context/productsContext';
 
 function App() {
   return (
-    <RouterProvider router={movieLife} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeLayout />}>
+          <Route index element={<Home />} />
+          <Route path="products" element={<Products />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <ProductsProvider>
+    <App />
+  </ProductsProvider>
+);

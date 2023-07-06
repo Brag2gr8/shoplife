@@ -2,6 +2,12 @@ header {
     padding: 36px;
 }
 
+.logo-name {
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 .nav > div {
     color: var(--text-color);
     display: flex;

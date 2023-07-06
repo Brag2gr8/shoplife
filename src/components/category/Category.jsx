@@ -15,7 +15,7 @@ const Categories = () => {
     return (
         <section className="category">
             <div className="category-text">
-                <h3>EDITOR'S PICK</h3>
+                <h2>EDITOR'S PICK</h2>
                 <p>Problems trying to resolve the conflict between </p>
             </div>
             <div  className="categories">
