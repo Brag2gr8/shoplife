@@ -5,7 +5,7 @@
     gap: 10px;
     border-radius: 10px;
     padding-bottom: 10px;
-    box-shadow: 0px 0px 10px var(--blue);
+    box-shadow: 0px 0px 5px var(--blue);
 }
 
 .product-card:hover {

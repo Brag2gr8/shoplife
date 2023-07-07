@@ -15,6 +15,7 @@
     justify-content: space-between;
     gap: 15px;
     color: var(--second-text-color);
+    font-size: 20px;
 }
 
 .product-filter {

@@ -1,5 +1,11 @@
 header {
-    padding: 36px;
+  padding: 36px;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: var(--white-color);
 }
 
 .logo-name {
@@ -42,6 +48,10 @@ i {
     font-size: 30px;
     margin-top: 50px;
     height: fit-content;
+}
+
+.cart-amount {
+    font-size: 16px;
 }
 
 #large {display: none;}

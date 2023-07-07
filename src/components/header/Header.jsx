@@ -1,10 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import "./Header.css"
+import { productsContext } from "../../context/productsContext"
+import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
+    const {cartItems} = useContext(productsContext)
     const [isOpen, setIsOpen] = useState(false)
 
+    const activeStyle = { color: "var(--blue)" }
+
     const iconMobile = isOpen ? "fa-xmark" : "fa-bars"
+
+    const cartAmount = cartItems.length > 9 ? "9+" 
+        : cartItems.length
 
     return (
         <header>
@@ -12,16 +20,25 @@ const Header = () => {
                 <div>
                     <a href="/" className="logo-name">ShopLife</a>
                     <div className="large-screen-menu">
-                        <span>Products</span>
-                        <span>Categories</span>
-                        <span>About</span>
+                        <NavLink 
+                            to="products" 
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Products
+                        </NavLink>
+                        <NavLink>Categories</NavLink>
+                        <NavLink>About</NavLink>
                     </div>
                     <div className="icon-container">
                         <div className="login">
                             <i className="fa-regular fa-user"></i>
                             <span>Login / Register</span>  
                         </div>                    
-                        <i className="fa-solid fa-cart-shopping"></i>
+                        <i className="fa-solid fa-cart-shopping">
+                            <span className="cart-amount">
+                                {cartItems.length > 0 && cartAmount}
+                            </span>
+                        </i>
                         <i 
                             className={`fa-solid ${iconMobile}`}
                             onClick={() => setIsOpen(prev => !prev)}

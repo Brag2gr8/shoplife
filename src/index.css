@@ -11,7 +11,7 @@
   --text-color: #252B42;
   --second-text-color: #737373;
   --success-color: #2DC071;
-  --blue: #23A6F0
+  --blue: #23A6F0;
 }
 
 i {cursor: pointer;}
@@ -31,4 +31,9 @@ button:hover {
 a {
   text-decoration: none;
   color: initial;
+}
+
+.outlet-container {
+
+  margin-top: 80px;
 }

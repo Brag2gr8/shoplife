@@ -1,15 +1,22 @@
 import Rating from 'react-rating-stars-component'
 import { productsContext } from '../../context/productsContext';
 import "./ProductCard.css"
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 const ProductCard = ({id, name, image, cat, price, rate,review}) => {
-    const {add, check, remove} = useContext(productsContext)
+    const {
+        addToCart, 
+        checkItemInCart, 
+        removeFromCart,
+        addToFavorite,
+        RremoveFromFavorite,
+    } = useContext(productsContext)
+    const [isfavorite, setIsFavorite] = useState()
     const ratingChanged = (newRating) => {
         console.log(newRating);
     }
 
-    const noOfProductInCart = check(id)
+    const noOfProductInCart = checkItemInCart(id)
 
     return (
         <div className="product-card">
@@ -44,12 +51,22 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
                 <p>154 Sales</p>
             </div>
             <div className='product-card-cart-btns'>
-                {noOfProductInCart && <i className="fa-solid fa-minus" onClick={() => remove(id)}></i>}
+                {noOfProductInCart && 
+                    <i 
+                        className="fa-solid fa-minus" 
+                        onClick={() => removeFromCart(id)}
+                    >
+                    </i>
+                }
                 { noOfProductInCart ? 
                     <button>{noOfProductInCart}</button> : 
-                    <button onClick={() => add(id)}>Add To Cart</button>
+                    <button 
+                        onClick={() => addToCart(id)}
+                    >
+                        Add To Cart
+                    </button>
                 }
-                {noOfProductInCart && <i className="fa-solid fa-plus" onClick={() => add(id)}></i>}
+                {noOfProductInCart && <i className="fa-solid fa-plus" onClick={() => addToCart(id)}></i>}
             </div>
         </div>
     );

@@ -37,7 +37,24 @@ const Provider = ({children}) => {
         return bool
     }
 
-    const addItemToCart = (id) => {
+    const addToFavorite = (id) => {
+        products.map(item => {
+            if(item.id === id) {
+                setFavoriteItems(prev => {
+                    return [...prev, item]
+                })
+            }
+        })
+    }
+
+    const removeFromFavorite = () => {
+        const index = cartItems.findIndex((item) => item.id === id)
+        const updatedCart = [...cartItems]
+        updatedCart.splice(index, 1)
+        setFavoriteItems(updatedCart)
+    }
+
+    const addToCart = (id) => {
         products.map(item => {
             if(item.id === id) {
                 setCartItems(prev => {
@@ -47,21 +64,24 @@ const Provider = ({children}) => {
         })
     }
     
-    const removeItemFromCart = (id) => {
+    const removeFromCart = (id) => {
         const index = cartItems.findIndex((item) => item.id === id)
         const updatedCart = [...cartItems]
         updatedCart.splice(index, 1)
         setCartItems(updatedCart)
-      };
+    };
       
 
     return (
         <productsContext.Provider value={{
             products: products,
-            add: addItemToCart,
-            remove: removeItemFromCart,
-            check: checkItemInCart,
             cartItems: cartItems,
+            favoriteItems: favoriteItems,
+            addToCart: addToCart,
+            removeFromCart: removeFromCart,
+            checkItemInCart: checkItemInCart,
+            addToFavorite: addToFavorite,
+            removeFromFavorite: removeFromFavorite
         }}
         >
             {children}
