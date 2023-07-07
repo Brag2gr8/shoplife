@@ -4,7 +4,7 @@ import { productsContext } from "../../context/productsContext"
 import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
-    const {cartItems} = useContext(productsContext)
+    const {cartItems, favoriteItems} = useContext(productsContext)
     const [isOpen, setIsOpen] = useState(false)
 
     const activeStyle = { color: "var(--blue)" }
@@ -13,6 +13,9 @@ const Header = () => {
 
     const cartAmount = cartItems.length > 9 ? "9+" 
         : cartItems.length
+
+    const favoriteAmount = favoriteItems.length > 9 ? "9+" 
+    : favoriteItems.length
 
     return (
         <header>
@@ -44,7 +47,11 @@ const Header = () => {
                             onClick={() => setIsOpen(prev => !prev)}
                             id="small"
                         ></i>
-                        <i className="fa-regular fa-heart" id="large"></i>
+                        <i className="fa-solid fa-heart" id="large">
+                            <span className="cart-amount">
+                                {favoriteItems.length > 0 && favoriteAmount}
+                            </span>
+                        </i>
                     </div>
                 </div>
                 { isOpen && 

@@ -9,15 +9,22 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
         checkItemInCart, 
         removeFromCart,
         addToFavorite,
-        RremoveFromFavorite,
+        removeFromFavorite,
+        checkItemInFavorite,
     } = useContext(productsContext)
-    const [isfavorite, setIsFavorite] = useState()
+
+    const isfavorite = checkItemInFavorite(id)
     const ratingChanged = (newRating) => {
         console.log(newRating);
     }
 
     const noOfProductInCart = checkItemInCart(id)
 
+    const favoriteIcon = isfavorite ?
+        <i className="fa-solid fa-heart" onClick={() => removeFromFavorite(id)}></i> :
+        <i className="fa-regular fa-heart" onClick={() => addToFavorite(id)}></i> 
+
+        console.log(isfavorite)
     return (
         <div className="product-card">
             <div className='product-card-img-container'>
@@ -44,7 +51,7 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
                     />
                     <span>{rate} ({review})</span>
                 </div>
-                <i className="fa-regular fa-heart"></i>
+                {favoriteIcon}
             </div>
             <div className='product-card-sales'>
                 <i className="fa-solid fa-cart-shopping"></i>
@@ -66,7 +73,10 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
                         Add To Cart
                     </button>
                 }
-                {noOfProductInCart && <i className="fa-solid fa-plus" onClick={() => addToCart(id)}></i>}
+                {noOfProductInCart && 
+                    <i className="fa-solid fa-plus" onClick={() => addToCart(id)}
+                    ></i>
+                }
             </div>
         </div>
     );

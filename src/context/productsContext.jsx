@@ -27,11 +27,11 @@ const Provider = ({children}) => {
         return number
     }
 
-    const checkItemIsFavorite = (id) => {
+    const checkItemInFavorite = (id) => {
         let bool = false
         favoriteItems.map(item => {
             if(item.id === id) {
-                bool == true
+                bool = true
             }
         })
         return bool
@@ -46,8 +46,8 @@ const Provider = ({children}) => {
             }
         })
     }
-
-    const removeFromFavorite = () => {
+console.log(favoriteItems)
+    const removeFromFavorite = (id) => {
         const index = cartItems.findIndex((item) => item.id === id)
         const updatedCart = [...cartItems]
         updatedCart.splice(index, 1)
@@ -81,7 +81,8 @@ const Provider = ({children}) => {
             removeFromCart: removeFromCart,
             checkItemInCart: checkItemInCart,
             addToFavorite: addToFavorite,
-            removeFromFavorite: removeFromFavorite
+            removeFromFavorite: removeFromFavorite,
+            checkItemInFavorite: checkItemInFavorite
         }}
         >
             {children}
