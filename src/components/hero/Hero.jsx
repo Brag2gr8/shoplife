@@ -6,10 +6,10 @@ const Hero = () => {
   const [count, setCount] = useState(0);
   const { image, type, desc, link } = heroData[count];
 
-//   useEffect(() => {
-//     const interval = setInterval(addCount, 5000);
-//     return () => clearInterval(interval);
-//   }, []);
+  useEffect(() => {
+    const interval = setInterval(addCount, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const addCount = () => {
     setCount((prev) => (prev === heroData.length - 1 ? 0 : prev + 1));
