@@ -1,14 +1,24 @@
 import Category from "../../components/category/Category";
-import { featuredData } from "../../utils/homeUtils";
 import ProductCard from "../../components/productCard/ProductCard";
 import "./Products.css";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { productsContext } from "../../context/productsContext";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Products = () => {
-    const { products } = useContext(productsContext);
+  const { products } = useContext(productsContext);
 
-  const productJsx = products.map((product) => {
+
+  const [searchParam, setSearchParam] = useSearchParams("type")
+  
+  const categoryFilter = searchParam.get("category")
+  console.log(categoryFilter)
+
+  const displayProduct = categoryFilter 
+    ? products.filter(prod => prod.category === categoryFilter) 
+    : products
+
+  const productJsx = displayProduct.map((product) => {
     const { id, title, category, price, image, rating } = product;
 
     return (
@@ -34,11 +44,33 @@ const Products = () => {
         <div className="product-header">
           <h5>Showing all 20 results</h5>
           <div className="product-filter">
-            <span>Women</span>
-            <span>Men</span>
-            <span>Electronics</span>
-            <span>Jewelries</span>
-            <button>Clear Filter</button>
+            <Link 
+              to="?category=women's clothing"
+              className={`fiter-link ${categoryFilter === "women's clothing" ? "selected" : ""}`}
+            >
+              Women
+            </Link>
+            <Link 
+              to="?category=men's clothing"
+              className={`fiter-link ${categoryFilter === "men's clothing" ? "selected" : ""}`}
+            >
+              Men
+            </Link>
+            <Link 
+              to="?category=electronics"
+              className={`fiter-link ${categoryFilter === "electronics" ? "selected" : ""}`}
+            >
+              Electronics
+            </Link>
+            <Link 
+              to="?category=jewelery"
+              className={`fiter-link ${categoryFilter === "jewelery" ? "selected" : ""}`}
+            >
+              Jewelries
+            </Link>
+            {categoryFilter &&
+              <button onClick={() => setSearchParam({})}>Clear Filter</button>
+            }
           </div>
         </div>
         <div className="products-container">{productJsx}</div>

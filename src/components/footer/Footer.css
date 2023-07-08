@@ -1,0 +1,31 @@
+footer {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-top: 2px solid var(--blue)
+  }
+  
+  .fakestore-logo {
+    width: 50px;
+    margin-top: 20px;
+  }
+  .fakestore-logo:hover {transform: scale(1.1);}
+  
+  .social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+  }
+  
+  .social-icons-container > a > i {font-size: 30px;}
+  i:hover {transform: scale(1.2);}
+  .fa-twitter:hover {color: #00acee;}
+  .fa-linkedin:hover {color: #0072b1 ;}
+  .fa-github:hover {color: #6e5494 ;}
+  .fa-envelope:hover {color: red ;}
+  
+  .theDev {color: var(--blue);}
+  .theDev {transform: scale(1.1);}

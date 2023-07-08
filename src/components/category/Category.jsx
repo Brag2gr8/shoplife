@@ -1,13 +1,14 @@
 import "./Category.css"
 import { CategoryData } from "../../utils/homeUtils"
+import { Link } from "react-router-dom"
 
 const Categories = () => {
 
-    const categoriesJsx = CategoryData.map(({id, image, type}) => {
+    const categoriesJsx = CategoryData.map(({id, image, link, type}) => {
         return (
             <div key={id} className="category-container">
                 <img src={image} alt={image} className="category-img"/>
-                <span>{type}</span>
+                <Link to={`/products?category=${link}`}>{type}</Link>
             </div>
         )
     })

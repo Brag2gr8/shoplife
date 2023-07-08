@@ -46,10 +46,10 @@ const Provider = ({children}) => {
             }
         })
     }
-console.log(favoriteItems)
+    
     const removeFromFavorite = (id) => {
-        const index = cartItems.findIndex((item) => item.id === id)
-        const updatedCart = [...cartItems]
+        const index = favoriteItems.findIndex((item) => item.id === id)
+        const updatedCart = [...favoriteItems]
         updatedCart.splice(index, 1)
         setFavoriteItems(updatedCart)
     }

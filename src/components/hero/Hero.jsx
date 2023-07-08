@@ -1,6 +1,7 @@
 import "./Hero.css";
 import { useEffect, useState } from "react";
 import { heroData } from "../../utils/homeUtils";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [count, setCount] = useState(0);
@@ -31,7 +32,11 @@ const Hero = () => {
         <h2>SUMMER 2020</h2>
         <h1>{type} COLLECTION</h1>
         <p>{desc}</p>
-        <button>SHOP NOW</button>
+        <Link to="products">
+          <button className="hero-cta-btn">
+            SHOP NOW
+          </button>
+        </Link>
       </div>
       <i className="fa-solid fa-chevron-right" onClick={addCount}></i>
     </section>

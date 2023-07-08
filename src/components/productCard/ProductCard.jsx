@@ -24,7 +24,6 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
         <i className="fa-solid fa-heart" onClick={() => removeFromFavorite(id)}></i> :
         <i className="fa-regular fa-heart" onClick={() => addToFavorite(id)}></i> 
 
-        console.log(isfavorite)
     return (
         <div className="product-card">
             <div className='product-card-img-container'>

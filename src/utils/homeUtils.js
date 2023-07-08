@@ -11,21 +11,25 @@ const CategoryData = [
     {
         id: "0",
         type: "MEN",
+        link: "men's clothing",
         image: men
     },
     {
         id: "1",
         type: "WOMEN",
+        link: "women's clothing",
         image: women
     },
     {
         id: "2",
         type: "ELECTRONICS",
+        link: "electronics",
         image: electronics
     },
     {
         id: "3",
         type: "JEWELRIES",
+        link: "jewelry",
         image: jewelries
     }
 ]
