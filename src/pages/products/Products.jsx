@@ -34,6 +34,7 @@ const Products = () => {
       />
     );
   });
+  console.log(products)
 
   return (
     <>
@@ -42,7 +43,7 @@ const Products = () => {
       </section>
       <section className="products">
         <div className="product-header">
-          <h5>Showing all 20 results</h5>
+          <h5>Showing all {displayProduct.length} results</h5>
           <div className="product-filter">
             <Link 
               to="?category=women's clothing"
