@@ -6,6 +6,7 @@ header {
   right: 0;
   top: 0;
   background: var(--white-color);
+  margin-bottom: 500px;
 }
 
 .logo-name {
@@ -30,9 +31,9 @@ header {
     gap: 30px;
 }
 
-.login {
+/* .login {
     display: none;
-}
+} */
 
 i {
     font-size: 24px;
@@ -54,6 +55,21 @@ i {
     font-size: 16px;
 }
 
+.login {
+    display: flex;
+    gap: 5px;
+    align-self: end;
+}
+
+.login > i { 
+    font-size: 14px;
+}
+
+.login > span {
+    font-weight: 700;
+    font-size: 14px;
+}
+
 #large {display: none;}
 #small {display: block;}
 
@@ -65,20 +81,6 @@ i {
     #menu-list {display: none}
     .icon-container {color: var(--blue)}
 
-    .login {
-        display: flex;
-        gap: 5px;
-        align-self: end;
-    }
-
-    .login > i { 
-        font-size: 14px;
-    }
-
-    .login > span {
-        font-weight: 700;
-        font-size: 14px;
-    }
 
     .large-screen-menu {
         display: flex;

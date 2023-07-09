@@ -37,51 +37,46 @@ const Products = () => {
   console.log(products)
 
   return (
-    <>
-      <section className="category">
-        <Category />
-      </section>
-      <section className="products">
-        <div className="product-header">
-          <h5>Showing all {displayProduct.length} results</h5>
-          <div className="product-filter">
-            <Link 
-              to="?category=women's clothing"
-              className={`fiter-link ${categoryFilter === "women's clothing" ? "selected" : ""}`}
-            >
-              Women
-            </Link>
-            <Link 
-              to="?category=men's clothing"
-              className={`fiter-link ${categoryFilter === "men's clothing" ? "selected" : ""}`}
-            >
-              Men
-            </Link>
-            <Link 
-              to="?category=electronics"
-              className={`fiter-link ${categoryFilter === "electronics" ? "selected" : ""}`}
-            >
-              Electronics
-            </Link>
-            <Link 
-              to="?category=jewelery"
-              className={`fiter-link ${categoryFilter === "jewelery" ? "selected" : ""}`}
-            >
-              Jewelries
-            </Link>
-          </div>
-            {categoryFilter &&
-              <span 
-                onClick={() => setSearchParam({})}
-                className="clear"
-              >
-                Clear all Filter
-              </span>
-            }
+    <section className="products">
+      <div className="product-header">
+        <h5>Showing all {displayProduct.length} results</h5>
+        <div className="product-filter">
+          <Link 
+            to="?category=women's clothing"
+            className={`fiter-link ${categoryFilter === "women's clothing" ? "selected" : ""}`}
+          >
+            Women
+          </Link>
+          <Link 
+            to="?category=men's clothing"
+            className={`fiter-link ${categoryFilter === "men's clothing" ? "selected" : ""}`}
+          >
+            Men
+          </Link>
+          <Link 
+            to="?category=electronics"
+            className={`fiter-link ${categoryFilter === "electronics" ? "selected" : ""}`}
+          >
+            Electronics
+          </Link>
+          <Link 
+            to="?category=jewelery"
+            className={`fiter-link ${categoryFilter === "jewelery" ? "selected" : ""}`}
+          >
+            Jewelries
+          </Link>
         </div>
-        <div className="products-container">{productJsx}</div>
-      </section>
-    </>
+          {categoryFilter &&
+            <span 
+              onClick={() => setSearchParam({})}
+              className="clear"
+            >
+              Clear all Filter
+            </span>
+          }
+      </div>
+      <div className="products-container">{productJsx}</div>
+    </section>
   );
 };
 

@@ -29,41 +29,72 @@ const Header = () => {
                         >
                             Products
                         </NavLink>
-                        <NavLink>Orders</NavLink>
-                        <NavLink>About</NavLink>
+                        <NavLink
+                            to="orders"
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Orders
+                        </NavLink>
+                        <NavLink
+                            to="about"
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            About
+                        </NavLink>
                     </div>
                     <div className="icon-container">
                         <div className="login">
                             <i className="fa-regular fa-user"></i>
                             <span>Login / Register</span>  
                         </div>                    
-                        <i className="fa-solid fa-cart-shopping">
-                            <span className="cart-amount">
-                                {cartItems.length > 0 && cartAmount}
-                            </span>
-                        </i>
-                        <i 
-                            className={`fa-solid ${iconMobile}`}
-                            onClick={() => setIsOpen(prev => !prev)}
-                            id="small"
-                        ></i>
-                        <i className="fa-solid fa-heart" id="large">
-                            <span className="cart-amount">
-                                {favoriteItems.length > 0 && favoriteAmount}
-                            </span>
-                        </i>
+                        <Link to="cart">
+                            <i className="fa-solid fa-cart-shopping">
+                                <span className="cart-amount">
+                                    {cartItems.length > 0 && cartAmount}
+                                </span>
+                            </i>
+                        </Link>                
+                            <i 
+                                className={`fa-solid ${iconMobile}`}
+                                onClick={() => setIsOpen(prev => !prev)}
+                                id="small"
+                            ></i>
+                        <Link to="cart" id="large">
+                            <i className="fa-solid fa-heart">
+                                <span className="cart-amount">
+                                    {favoriteItems.length > 0 && favoriteAmount}
+                                </span>
+                            </i>
+                        </Link>  
                     </div>
                 </div>
                 { isOpen && 
                     <div id="menu-list">
-                        <span>Home</span>
-                        <span>Products</span>
-                        <span>Orders</span>
-                        <span>About</span>
-                        <div className="login">
-                            <i className="fa-regular fa-user"></i>
-                            <span>Login / Register</span>  
-                        </div>   
+                        <NavLink
+                            to="/"
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Home
+                        </NavLink>
+                        <NavLink
+                            to="products"
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Products
+                        </NavLink>
+                        <NavLink
+                            to="orders"
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            Orders
+                        </NavLink>
+                        <NavLink
+                            to="about"
+                            style={ ({isActive}) => isActive ? activeStyle : null}
+                        >
+                            About
+                        </NavLink>
+                        <button>Logout</button>
                     </div>
                 }
             </nav>
