@@ -19,7 +19,7 @@ const Footer = () => (
                 <i className="fa-solid fa-envelope"></i>
             </a>
         </div>
-        <small>© 2023 MovieLife. All rights reserved.</small>
+        <small>© 2023 Shoplife. All rights reserved.</small>
         <p>Made with ❤️ by <a  className="theDev" href="http://linkedin.com/in/brag2" target="_blank">
             Emmanuel Ogbuzuru
         </a></p>

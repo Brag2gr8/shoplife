@@ -16,8 +16,8 @@ const Categories = () => {
     return (
         <section className="category">
             <div className="category-text">
-                <h2>EDITOR'S PICK</h2>
-                <p>Problems trying to resolve the conflict between </p>
+                <h2>DISCOVER AND DELIGHT</h2>
+                <p>Explore our diverse categories and unlock a world of endless possibilities. From fashion to electronics, find the perfect products to elevate your style and enhance your lifestyle</p>
             </div>
             <div  className="categories">
                 {categoriesJsx}

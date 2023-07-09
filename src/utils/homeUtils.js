@@ -38,25 +38,25 @@ const heroData = [
     {
         image: hero1,
         type: "WOMEN",
-        desc: "We know how large objects will act, but things on a small scale",
+        desc: "Unleash your inner diva with our curated collection of women's clothing. From chic dresses to trendy ensembles, embrace your individuality and make a statement",
         link: "women"
     },
     {
         image: `${hero2}`,
         type: "MEN",
-        desc: "We know how large objects will act, but things on a small scale",
+        desc: "Elevate your style with confidence. Discover impeccable men's fashion that combines sophistication and comfort for the modern gentleman",
         link: "men"
     },
     {
         image: `${hero3}`,
         type: "ELETRONICS",
-        desc: "We know how large objects will act, but things on a small scale",
+        desc: "Embrace the future with cutting-edge technology. Explore our innovative range of electronics designed to enhance your daily life",
         link: "eletronics"
     },
     {
         image: `${hero4}`,
         type: "JEWELRIES",
-        desc: "We know how large objects will act, but things on a small scale",
+        desc: "Indulge in timeless elegance and sparkle with our exquisite jewelry collection. Each piece is a testament to craftsmanship and adds a touch of sophistication to any occasion",
         link: "jewelries"
     }
 ]

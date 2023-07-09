@@ -69,10 +69,15 @@ const Products = () => {
             >
               Jewelries
             </Link>
-            {categoryFilter &&
-              <button onClick={() => setSearchParam({})}>Clear Filter</button>
-            }
           </div>
+            {categoryFilter &&
+              <span 
+                onClick={() => setSearchParam({})}
+                className="clear"
+              >
+                Clear all Filter
+              </span>
+            }
         </div>
         <div className="products-container">{productJsx}</div>
       </section>

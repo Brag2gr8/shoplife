@@ -29,7 +29,7 @@ const Header = () => {
                         >
                             Products
                         </NavLink>
-                        <NavLink>Categories</NavLink>
+                        <NavLink>Orders</NavLink>
                         <NavLink>About</NavLink>
                     </div>
                     <div className="icon-container">
@@ -58,8 +58,12 @@ const Header = () => {
                     <div id="menu-list">
                         <span>Home</span>
                         <span>Products</span>
-                        <span>Categories</span>
+                        <span>Orders</span>
                         <span>About</span>
+                        <div className="login">
+                            <i className="fa-regular fa-user"></i>
+                            <span>Login / Register</span>  
+                        </div>   
                     </div>
                 }
             </nav>
