@@ -1,3 +1,260 @@
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    padding: 50px;
+}
+
 .cart {
-    height: 100vh
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.cart > h3 { margin-top: 40px;}
+
+.cart .bold {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.cart-items-container > hr {
+    border: 1px solid var(--blue);
+}
+
+.cart-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 0 5px var(--blue);
+}
+
+.cart-item-details > h4 {
+    color: var(--blue);
+    max-width: 400px;
+    text-align: right;
+}
+
+.cart-item > img {
+    height: 70px;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px
+}
+
+.cart-item-details > p {
+    display: flex;
+    gap: 50px;
+    font-weight: 500;
+}
+
+.cart-item-control-btn {
+    display: flex;
+    gap: 15px;
+}
+.cart-item-control-btn > span {font-weight: 700;}
+.cart-item-control-btn > i {
+    font-size: 13px;
+    background: var(--blue);
+    border-radius: 50%;
+    padding: 3px;
+    font-weight: 700;
+}
+
+.payment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.price-details,
+.total-price,
+.coupon > div,
+.payment-type {
+    box-shadow: 0 0 5px var(--blue);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.price-details > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-details span { font-weight: 500;}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coupon {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.coupon > div {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.coupon input {
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+}
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.payment-type {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 25px 30px
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 30px
+}
+
+.radio > label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.payment-section input:focus {
+    outline: 0
+}
+
+.radio input {
+    appearance: none;
+    outline: solid 2px var(--blue);
+    outline-offset: 3px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+
+.radio input:checked {
+    background-color: var(--blue);
+}
+
+.radio > label > img:hover {
+    transform: scale(1.1);
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.card-details > div {
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    /* justify-content: space-between; */
+}
+
+.visa {justify-content: space-between;}
+
+.card-details input {
+    width: 70%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 0.5px solid var(--second-text-color);
+}
+
+.card-details > div > img {
+    width: 50px
+}
+
+.cvv > input {
+    width: 20%;
+}
+
+.card-details > button {
+    margin-top: 30px;
+    width: fit-content;
+    align-self: center;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    background: var(--blue);
+    font-weight: 700;
+}
+
+.no-cart {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.no-cart > button {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+}
+
+.shop-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.shop-more > a {
+    color: var(--blue);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.shop-more > h3 {
+    color: var(--second-text-color);
+}
+
+@media (min-width: 750px) {
+    .cart {
+        flex-direction: row;
+    }
 }

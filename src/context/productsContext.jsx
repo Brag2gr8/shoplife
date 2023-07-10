@@ -62,7 +62,8 @@ const Provider = ({children}) => {
                 })
             }
         })
-    }
+      };
+      
     
     const removeFromCart = (id) => {
         const index = cartItems.findIndex((item) => item.id === id)

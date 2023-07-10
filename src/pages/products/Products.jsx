@@ -12,7 +12,6 @@ const Products = () => {
   const [searchParam, setSearchParam] = useSearchParams("type")
   
   const categoryFilter = searchParam.get("category")
-  console.log(categoryFilter)
 
   const displayProduct = categoryFilter 
     ? products.filter(prod => prod.category === categoryFilter) 
@@ -34,7 +33,6 @@ const Products = () => {
       />
     );
   });
-  console.log(products)
 
   return (
     <section className="products">

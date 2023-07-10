@@ -2,6 +2,7 @@ import Rating from 'react-rating-stars-component'
 import { productsContext } from '../../context/productsContext';
 import "./ProductCard.css"
 import { useContext, useState } from 'react';
+import Cart from '../../pages/cart/Cart';
 
 const ProductCard = ({id, name, image, cat, price, rate,review}) => {
     const {
@@ -35,8 +36,8 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
                 <h3>{cat[0].toUpperCase() + cat.slice(1)}</h3>
                 <p>{name}</p>
                 <h4 className='product-card-price'>
-                    <p><del>$ {price * 2}</del></p>
-                    $ {price}
+                    <p><del>${price * 2}</del></p>
+                    ${price}
                 </h4>
             </div>
             <div className="product-card-rating-favorite">
