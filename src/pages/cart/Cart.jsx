@@ -69,7 +69,7 @@ const Cart = () => {
         )
     }
 
-    const finalPrice = coupon ? (total * 0.105).toFixed(2) : (total * 0.005).toFixed(2)
+    const finalPrice = coupon ? (total * 0.805).toFixed(2) : (total * 0.995).toFixed(2)
     
     return (
         <section className="cart-page">
@@ -100,12 +100,13 @@ const Cart = () => {
                         <h5>${(total * 0.995).toFixed(2)}</h5>
                     </div>
                     <div className="coupon">
-                        <h5>Apply Coupon</h5>
+                        <h5>Apply Coupon (use "Bragg" for 10% off)</h5>
                         <div>
                             <i className="fa-solid fa-gift"></i>
                             <input 
                                 type="text"
                                 placeholder="Enter Coupon code"
+                                onChange={(e) => setCoupon(e.target.value)}
                             />
                         </div>
                     </div>
@@ -159,7 +160,7 @@ const Cart = () => {
                                         required
                                     />
                                 </div>
-                                <button>Pay ${(total * 0.995).toFixed(2)}</button>
+                                <button>Pay ${finalPrice}</button>
                             </form>
                         </div>
                         <div className="shop-more">
