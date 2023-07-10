@@ -1,0 +1,34 @@
+.favorite {
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.favorite > h2 {
+    text-align: center;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    gap: 30px;
+}
+
+.no-favorite {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.no-favorite > button {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+}

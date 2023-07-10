@@ -8,7 +8,6 @@ import { Link, useSearchParams } from "react-router-dom";
 const Products = () => {
   const { products } = useContext(productsContext);
 
-
   const [searchParam, setSearchParam] = useSearchParams("type")
   
   const categoryFilter = searchParam.get("category")

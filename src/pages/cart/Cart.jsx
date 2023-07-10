@@ -13,6 +13,7 @@ const Cart = () => {
         addToCart, 
         checkItemInCart, 
         removeFromCart,
+        totalPrice
     } = useContext(productsContext)
 
     const arrangedCartArr = []
@@ -29,11 +30,9 @@ const Cart = () => {
     const cartJsx = arrangedCartArr.map(item => {
         const noOfProductInCart = checkItemInCart(item.id)
 
-        total += item.price
-
         return (
-            <>
-                <div className="cart-item" key={item.id}>
+            <div key={item.id}>
+                <div className="cart-item">
                     <img src={item.image}/>
                     <div className="cart-item-details">
                         <h4>{item.title}</h4>
@@ -52,10 +51,10 @@ const Cart = () => {
                     </div>
                 </div>
                 <hr />
-            </>
+            </div>
         )
     })
-    
+
     const handleSubmit = () => {
         
     }
@@ -64,12 +63,12 @@ const Cart = () => {
         return (
             <div className="no-cart">
                 <h1>No Item In Cart</h1>
-                <button><Link to="/">Go To Products</Link></button>
+                <button><Link to="/products">Go To Products</Link></button>
             </div>
         )
     }
 
-    const finalPrice = coupon ? (total * 0.805).toFixed(2) : (total * 0.995).toFixed(2)
+    const finalPrice = coupon === "BRAGG" ? (totalPrice * 0.805).toFixed(2) : (totalPrice * 0.995).toFixed(2)
     
     return (
         <section className="cart-page">
@@ -84,7 +83,7 @@ const Cart = () => {
                     <div className="price-details">
                         <div>
                             <span>Total Amount</span>
-                            <h5>${total.toFixed(2)}</h5>
+                            <h5>${totalPrice.toFixed(2)}</h5>
                         </div>
                         <div>
                             <span>Shipping Fee</span>
@@ -92,15 +91,11 @@ const Cart = () => {
                         </div>
                         <div>
                             <span>Tax</span>
-                            <h5>{-(total * 0.005).toFixed(2)}</h5>
+                            <h5>{-(totalPrice * 0.005).toFixed(2)}</h5>
                         </div>
                     </div>
-                    <div className="total-price">
-                        <h4>TOTAL</h4>
-                        <h5>${(total * 0.995).toFixed(2)}</h5>
-                    </div>
                     <div className="coupon">
-                        <h5>Apply Coupon (use "Bragg" for 10% off)</h5>
+                        <h5>Apply Coupon (use "BRAGG" for 10% off)</h5>
                         <div>
                             <i className="fa-solid fa-gift"></i>
                             <input 
@@ -108,7 +103,12 @@ const Cart = () => {
                                 placeholder="Enter Coupon code"
                                 onChange={(e) => setCoupon(e.target.value)}
                             />
+                            {coupon === "BRAGG" && <h5>{- (totalPrice * 0.1).toFixed(2)}</h5>}
                         </div>
+                    </div>
+                    <div className="total-price">
+                        <h4>TOTAL</h4>
+                        <h5>${finalPrice}</h5>
                     </div>
                     <div className="payment">
                         <h5>Select Payment Method</h5>

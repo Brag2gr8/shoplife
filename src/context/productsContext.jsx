@@ -6,6 +6,7 @@ const Provider = ({children}) => {
     const [products, setProducts] = useState([])
     const [cartItems, setCartItems] = useState([])
     const [favoriteItems, setFavoriteItems] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
         const loadProducts = async () => {
@@ -60,6 +61,7 @@ const Provider = ({children}) => {
                 setCartItems(prev => {
                     return [...prev, item]
                 })
+                setTotalPrice(prev => prev + item.price)
             }
         })
       };
@@ -70,8 +72,12 @@ const Provider = ({children}) => {
         const updatedCart = [...cartItems]
         updatedCart.splice(index, 1)
         setCartItems(updatedCart)
+        products.map(item => {
+            if (item.id === id) {
+                setTotalPrice(prev => prev - item.price)
+            }
+        })
     };
-      
 
     return (
         <productsContext.Provider value={{
@@ -83,7 +89,8 @@ const Provider = ({children}) => {
             checkItemInCart: checkItemInCart,
             addToFavorite: addToFavorite,
             removeFromFavorite: removeFromFavorite,
-            checkItemInFavorite: checkItemInFavorite
+            checkItemInFavorite: checkItemInFavorite,
+            totalPrice: totalPrice,
         }}
         >
             {children}

@@ -28,7 +28,7 @@
     align-items: center;
 }
 
-.cart-items-container > hr {
+.cart-items-container  hr {
     border: 1px solid var(--blue);
 }
 
@@ -37,6 +37,7 @@
     flex-direction: column;
     gap: 20px;
     box-shadow: 0 0 5px var(--blue);
+    height: fit-content;
 }
 
 .cart-item-details > h4 {
@@ -53,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     gap: 10px
 }
 

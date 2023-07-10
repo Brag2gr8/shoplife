@@ -26,18 +26,21 @@ const Header = () => {
                         <NavLink 
                             to="products" 
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             Products
                         </NavLink>
                         <NavLink
                             to="orders"
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             Orders
                         </NavLink>
                         <NavLink
                             to="about"
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             About
                         </NavLink>
@@ -47,7 +50,7 @@ const Header = () => {
                             <i className="fa-regular fa-user"></i>
                             <span>Login / Register</span>  
                         </div>                    
-                        <Link to="cart">
+                        <Link to="cart" onClick={() => setIsOpen(false)}>
                             <i className="fa-solid fa-cart-shopping">
                                 <span className="cart-amount">
                                     {cartItems.length > 0 && cartAmount}
@@ -59,7 +62,7 @@ const Header = () => {
                                 onClick={() => setIsOpen(prev => !prev)}
                                 id="small"
                             ></i>
-                        <Link to="cart" id="large">
+                        <Link to="favorite" id="large" onClick={() => setIsOpen(false)}>
                             <i className="fa-solid fa-heart">
                                 <span className="cart-amount">
                                     {favoriteItems.length > 0 && favoriteAmount}
@@ -73,24 +76,28 @@ const Header = () => {
                         <NavLink
                             to="/"
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             Home
                         </NavLink>
                         <NavLink
                             to="products"
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             Products
                         </NavLink>
                         <NavLink
                             to="orders"
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             Orders
                         </NavLink>
                         <NavLink
                             to="about"
                             style={ ({isActive}) => isActive ? activeStyle : null}
+                            onClick={() => setIsOpen(false)}
                         >
                             About
                         </NavLink>
