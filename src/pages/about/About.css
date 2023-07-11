@@ -1,0 +1,20 @@
+.about-page,
+.about-page > section {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page {
+    padding: 50px;
+    gap: 30px
+}
+
+.about-page > section { gap: 20px}
+h2, h3 { color: var(--blue);}
+p, li {font-weight: 500;}
+
+@media (min-width: 750px) {
+    .about-page {
+        padding: 50px 20vw;
+    }
+}
