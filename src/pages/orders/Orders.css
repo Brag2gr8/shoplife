@@ -1,0 +1,37 @@
+.order-page {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px;
+}
+
+.order-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 10px 0;
+    box-shadow: 0 0 5px var(--blue);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--blue);
+    padding: 5px;
+}
+
+.order-item > span {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.order-header > span {
+    font-weight: 700;
+}
+
+.delete-order:hover {
+    cursor: pointer;
+    color: red;
+}

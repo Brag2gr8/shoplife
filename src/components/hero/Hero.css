@@ -22,6 +22,8 @@
     transition: opacity 1s ease-in-out;
   }
 
+  .hero-desc > h2 {color: unset;}
+
 .hero-desc > h1 {font-size: 40px;}
 .hero-desc > h2 {font-size: 16px;}
 .hero-desc > p {font-size: 20px;}
