@@ -19,8 +19,6 @@ const Orders = () => {
         </div>)
     })
 
-    console.log(orders)
-
     return (
         <section className="order-page">
             <h2>Order History</h2>

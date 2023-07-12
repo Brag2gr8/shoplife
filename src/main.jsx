@@ -8,7 +8,7 @@ import Favorite from "./pages/favorite/Favorite";
 // import Products from "./pages/products/Products";
 import { ProductsProvider } from './context/productsContext';
 import About from "./pages/about/About"
-import Login, {loader as loginLoader} from './pages/auth/Login';
+import Login from './pages/auth/Login';
 import SignUp from './pages/auth/Signup';
 import Orders from "./pages/orders/Orders"
 
@@ -23,7 +23,7 @@ function App() {
           <Route path="favorite" element={<Favorite />} />
           <Route path="orders" element={<Orders />} />
           <Route path="about" element={<About />} />
-          <Route path="login" loader={loginLoader} element={<Login />} />
+          <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
         </Route>
       </Routes>

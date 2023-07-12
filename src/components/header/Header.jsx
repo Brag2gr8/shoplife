@@ -1,11 +1,34 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import "./Header.css"
 import { productsContext } from "../../context/productsContext"
 import { Link, NavLink } from "react-router-dom"
 
+import { currentUser, logout, firestore } from "../../utils/firebaseUtils"
+
 const Header = () => {
     const {cartItems, favoriteItems} = useContext(productsContext)
     const [isOpen, setIsOpen] = useState(false)
+    const user = currentUser();
+    const [name, setName] = useState();
+    console.log(name)
+
+
+  useEffect(() => {
+    const fetchNickname = async () => {
+        if (user) {
+          const userDoc = await firestore.collection("users").doc(user.uid).get();
+          if (userDoc.exists) {
+            const userData = userDoc.data();
+            const nickname = userData.nickname;
+            setName(nickname);
+            console.log("Nickname:", nickname);
+            // You can use the nickname variable as needed
+          } 
+        }
+    };
+
+    fetchNickname();
+  }, [user]);
 
     const activeStyle = { color: "var(--blue)" }
 
@@ -46,9 +69,13 @@ const Header = () => {
                         </NavLink>
                     </div>
                     <div className="icon-container">
-                        <div className="login">
+                        <div className="user-details">
                             <i className="fa-regular fa-user"></i>
-                            <span>Login / Register</span>  
+                            { user ?
+                                <span>{name}</span>
+                                :
+                                <span><Link to="login">Login / Register</Link></span>
+                            } 
                         </div>                    
                         <Link to="cart" onClick={() => setIsOpen(false)}>
                             <i className="fa-solid fa-cart-shopping">
@@ -101,7 +128,6 @@ const Header = () => {
                         >
                             About
                         </NavLink>
-                        <button>Logout</button>
                     </div>
                 }
             </nav>

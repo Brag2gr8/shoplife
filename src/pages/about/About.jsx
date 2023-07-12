@@ -10,7 +10,7 @@ const About = () => {
                 Welcome to my app! This application was built with passion and dedication, aiming to provide a seamless user experience and showcase the skills and knowledge I gained during the development process.
             </p>
             <p>
-                The app is designed to Browse, shop and favorite productsfrom several categories. It leverages various technologies and tools to deliver a robust and interactive user interface.
+                The app is designed to Browse, shop and favorite products from several categories. It leverages various technologies and tools to deliver a robust and interactive user interface.
             </p>
         </section>
         <section>

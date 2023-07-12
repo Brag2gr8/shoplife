@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { auth, firestore } from "../../utils/firebaseUtils"; 
 import { Link, useNavigate } from "react-router-dom";
+import "./Auth.css"
 
 
 const SignUp = () => {
@@ -64,11 +65,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="signup-page">
+    <div className="auth-page">
       <h2>Create an account</h2>
       <form 
         onSubmit={handleSubmit}
-        className="signup-form"
+        className="auth-form"
       >
         <label>
           Nickname *

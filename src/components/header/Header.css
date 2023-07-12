@@ -30,7 +30,7 @@ header {
     gap: 30px;
 }
 
-/* .login {
+/* .user-details {
     display: none;
 } */
 
@@ -54,17 +54,17 @@ header i {
     font-size: 16px;
 }
 
-.login {
+.user-details {
     display: flex;
     gap: 5px;
     align-self: end;
 }
 
-.login > i { 
+.user-details > i { 
     font-size: 14px;
 }
 
-.login > span {
+.user-details > span {
     font-weight: 700;
     font-size: 14px;
 }
@@ -79,9 +79,12 @@ header i {
     
     #menu-list {display: none}
     .icon-container {color: var(--blue)}
-    header i {
+    header i,
+    header  a {
         color: var(--blue);
     }
+
+    
 
     .large-screen-menu {
         display: flex;

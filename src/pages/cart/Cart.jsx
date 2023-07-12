@@ -1,11 +1,11 @@
 import { useState, useContext } from "react"
 import { productsContext } from "../../context/productsContext"
-import paypal from "../../assets/paypal.png"
-import visa from "../../assets/visa.png"
-import "./Cart.css"
 import { Link } from "react-router-dom"
 import {nanoid} from "nanoid"
+import paypal from "../../assets/paypal.png"
+import visa from "../../assets/visa.png"
 import loading from "../../assets/loading.gif"
+import "./Cart.css"
 
 const Cart = () => {
     const [coupon, setCoupon] = useState("")
@@ -61,6 +61,7 @@ const Cart = () => {
             </div>
         )
     })
+
     const finalPrice = coupon === "BRAGG" ? (totalPrice * 0.805).toFixed(2) : (totalPrice * 0.995).toFixed(2)
 
     const handleSubmit = (e) => {
@@ -79,9 +80,6 @@ const Cart = () => {
             setTotalPrice(0)
         }, 2000)
     }
-
-    
-
     
     return (
         <section className="cart-page">

@@ -33,3 +33,12 @@ footer {
   
   .theDev {color: var(--blue);}
   .theDev {transform: scale(1.1);}
+
+  .logout-btn {
+    padding: 10px;
+    border-radius: 6px;
+    border: 0;
+    color: white;
+    font-weight: 700;
+    background: var(--blue);
+  }

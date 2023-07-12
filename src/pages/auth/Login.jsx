@@ -1,11 +1,7 @@
 import { useState } from "react";
-import { useNavigate, Link, useLoaderData } from "react-router-dom";
-import { auth, currentUser } from "../../utils/firebaseUtils";
-
-// Loader function to get the "message" query parameter from the URL
-export function loader({ request }) {
-  return new URL(request.url).searchParams.get("message")
-}
+import { useNavigate, Link, useLocation } from "react-router-dom";
+import { auth } from "../../utils/firebaseUtils";
+import "./Auth.css"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,7 +9,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const message = useLoaderData()
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const message = queryParams.get('message');
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -40,10 +39,10 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
+    <section className="auth-page">
       <h2>Login</h2>
       {message && <p className="success">{message}</p>}
-      <form onSubmit={handleLogin} className="create-watchlist-form signup-form">
+      <form onSubmit={handleLogin} className="auth-form">
         <label>
           Email *
           <input
@@ -75,9 +74,9 @@ const Login = () => {
       </form>
       {error && <p className="error">{error}</p>}
       <p className="below-alternate-signup">
-        Or create an account? <Link to="/signup">Here</Link>
+        Or create an account <Link to="/signup">Here</Link>
       </p>
-    </div>
+    </section>
   );
 }
 
