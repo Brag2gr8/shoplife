@@ -26,6 +26,8 @@
     padding: 10px;
     border: 2px solid var(--blue);
     border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500px
 }
 
 .auth-form > button {

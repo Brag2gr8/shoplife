@@ -28,6 +28,7 @@ const Footer = () => {
         } catch (error) {
             console.error("Error logging out:", error);
         }
+        window.location.reload()
     }
 
     return (

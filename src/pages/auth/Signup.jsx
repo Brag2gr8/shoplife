@@ -29,6 +29,11 @@ const SignUp = () => {
       return;
     }
 
+    if (nickname.length > 8) {
+      setError("Nickname must not be more than 8 characters");
+      return;
+    }
+
     try {
       setSigningUp(true);
       setError(null);
@@ -76,6 +81,7 @@ const SignUp = () => {
           <input
             type="text"
             name="nickname"
+            minLength={3}
             value={formData.nickname}
             onChange={handleChange}
             placeholder="Nickname"
@@ -122,10 +128,10 @@ const SignUp = () => {
           {signingUp ? "Signing Up..." : "Sign Up"}
         </button>
       </form>
+      {error && <p className="error">{error}</p>}
       <p className="below-alternate-signup">
         Have an account? <Link to="/login">Log in</Link>
       </p>
-      {error && <p className="error">{error}</p>}
     </div>
   );
 };
