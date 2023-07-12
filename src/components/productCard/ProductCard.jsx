@@ -2,7 +2,7 @@ import Rating from 'react-rating-stars-component'
 import { productsContext } from '../../context/productsContext';
 import "./ProductCard.css"
 import { useContext, useState } from 'react';
-import Cart from '../../pages/cart/Cart';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({id, name, image, cat, price, rate,review}) => {
     const {
@@ -28,7 +28,9 @@ const ProductCard = ({id, name, image, cat, price, rate,review}) => {
     return (
         <div className="product-card">
             <div className='product-card-img-container'>
-                <img src={image} alt="Product Image" />
+                <Link to={`/products/${id}`}>
+                    <img src={image} alt="Product Image" />
+                </Link>
                 <span>sales</span>
             </div>
             <div className='product-card-detail'>

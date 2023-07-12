@@ -94,7 +94,7 @@ header i {
         color: var(--second-text-color);
     }
 
-    .large-screen-menu > span:hover {
-        color: var(--blue);
+    .large-screen-menu > a:hover {
+        border-bottom: 2px solid var(--blue);
     }
 }

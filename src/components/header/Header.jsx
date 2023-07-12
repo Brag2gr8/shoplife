@@ -2,35 +2,36 @@ import { useContext, useState, useEffect } from "react"
 import "./Header.css"
 import { productsContext } from "../../context/productsContext"
 import { Link, NavLink } from "react-router-dom"
-
-import { currentUser, logout, firestore } from "../../utils/firebaseUtils"
+import { auth, firestore, getCurrentUser } from "../../utils/firebaseUtils"
 
 const Header = () => {
-    const {cartItems, favoriteItems} = useContext(productsContext)
-    const [isOpen, setIsOpen] = useState(false)
-    const user = currentUser();
-    const [name, setName] = useState();
-    console.log(name)
-
+  const { cartItems, favoriteItems } = useContext(productsContext)
+  const [isOpen, setIsOpen] = useState(false)
+  const [name, setName] = useState("")
 
   useEffect(() => {
-    const fetchNickname = async () => {
+    const fetchUserData = async () => {
+      try {
+        const user = await getCurrentUser()
         if (user) {
-          const userDoc = await firestore.collection("users").doc(user.uid).get();
+          const userDoc = await firestore.collection("users").doc(user.uid).get()
           if (userDoc.exists) {
-            const userData = userDoc.data();
-            const nickname = userData.nickname;
-            setName(nickname);
-            console.log("Nickname:", nickname);
-            // You can use the nickname variable as needed
-          } 
+            const userData = userDoc.data()
+            const nickname = userData.nickname
+            setName(nickname)
+          }
         }
-    };
+      } catch (error) {
+      }
+    }
+    fetchUserData()
+})
 
-    fetchNickname();
-  }, [user]);
-
-    const activeStyle = { color: "var(--blue)" }
+    const activeStyle = { 
+        fontWeight: "700",
+        borderBottom: "3px solid var(--blue)",
+        paddingBottom: "5px"
+    }
 
     const iconMobile = isOpen ? "fa-xmark" : "fa-bars"
 
@@ -71,7 +72,7 @@ const Header = () => {
                     <div className="icon-container">
                         <div className="user-details">
                             <i className="fa-regular fa-user"></i>
-                            { user ?
+                            { name ?
                                 <span>{name}</span>
                                 :
                                 <span><Link to="login">Login / Register</Link></span>

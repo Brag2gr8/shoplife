@@ -57,6 +57,10 @@ const Provider = ({ children }) => {
         localStorage.setItem('orders', JSON.stringify(orders));
     }, [orders]);
 
+    const getProduct = (id) => {
+        return products.find((item) => item.id === id)
+    }
+
     const addToCart = (id) => {
         const itemToAdd = products.find((item) => item.id === id);
         if (itemToAdd) {
@@ -130,6 +134,7 @@ const Provider = ({ children }) => {
             totalPrice: totalPrice,
             orders: orders,
             favoriteItems: favoriteItems,
+            getProduct: getProduct,
             addToCart: addToCart,
             setCartItems: setCartItems,
             removeFromCart: removeFromCart,

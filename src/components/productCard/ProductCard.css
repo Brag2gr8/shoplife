@@ -8,9 +8,7 @@
     box-shadow: 0px 0px 5px var(--blue);
 }
 
-.product-card:hover {
-    transform: scale(1.05);
-}
+.product-card:hover {transform: scale(1.01);}
 
 .product-card-img-container {
     width: 100%;
@@ -27,7 +25,7 @@
 }
 .product-card-price > p {color: var(--second-text-color);}
 
-.product-card-img-container > img {
+.product-card-img-container > a > img {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 10px;

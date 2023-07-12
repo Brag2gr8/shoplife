@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
+import Home from "./pages/Home";
 import HomeLayout from "./components/HomeLayout";
 import Products from "./pages/products/Products";
 import Cart from "./pages/cart/Cart";
@@ -11,6 +11,7 @@ import About from "./pages/about/About"
 import Login from './pages/auth/Login';
 import SignUp from './pages/auth/Signup';
 import Orders from "./pages/orders/Orders"
+import ProductDetails from './pages/products/ProductDetails';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:productId" element={<ProductDetails />}/>
           <Route path="cart" element={<Cart />} />
           <Route path="favorite" element={<Favorite />} />
           <Route path="orders" element={<Orders />} />

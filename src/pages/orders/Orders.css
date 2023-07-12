@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 30px;
     padding: 50px;
+    height: 70vh;
+    overflow: auto;
 }
 
 .order-container {

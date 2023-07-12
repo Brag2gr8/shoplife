@@ -32,6 +32,7 @@ const Login = () => {
       setLoading(false);
       alert("Successfully logged in");
       navigate("/");
+      window.location.reload()
     } catch (error) {
       setError(error.message);
       setLoading(false);

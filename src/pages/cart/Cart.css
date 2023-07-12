@@ -121,8 +121,11 @@
 .coupon > div {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px
 }
+
+/* .coupon-price {display: flex;} */
 
 .coupon input {
     width: 100%;
