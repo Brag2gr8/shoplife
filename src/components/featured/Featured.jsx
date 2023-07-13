@@ -26,7 +26,7 @@ const Featured = () => {
         <section className="featured">
             <div className="featured-text">
                 <h2>Featured Products</h2>
-                <p>Problems trying to resolve the conflict between </p>
+                <p>Discover the finest selection of products at ShopLife, where quality meets affordability. We take pride in curating a collection of featured products that are sure to delight our customers</p>
             </div>
             <div className="products-container">
                 {productJsx}
