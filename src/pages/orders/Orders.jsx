@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { productsContext } from "../../context/productsContext"
 import "./Orders.css"
+import { Link } from "react-router-dom"
 
 const Orders = () => {
     const { orders, removeOrder } = useContext(productsContext)
@@ -16,6 +17,15 @@ const Orders = () => {
             ></i>
         </div>)
     })
+
+    if (orders.length < 1) {
+        return (
+            <div className="no-cart">
+                <h1>You Have no Orders</h1>
+                <button><Link to="/products">Go To Products</Link></button>
+            </div>
+        )
+    }
 
     return (
         <section className="order-page">
