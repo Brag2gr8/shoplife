@@ -71,11 +71,16 @@ const Header = () => {
                     </div>
                     <div className="icon-container">
                         <div className="user-details">
-                            <i className="fa-regular fa-user"></i>
                             { name ?
-                                <span>{name}</span>
+                                <>
+                                    <i className="fa-regular fa-user"></i>
+                                    <span>{name}</span>
+                                </>
                                 :
-                                <span><Link to="login">Login / Register</Link></span>
+                                <Link to="login">
+                                    <i className="fa-regular fa-user"></i>
+                                    <span>Guest</span>
+                                </Link>
                             } 
                         </div>                    
                         <Link to="cart" onClick={() => setIsOpen(false)}>

@@ -36,9 +36,3 @@ a {
 .outlet-container {
   margin: 70px 0;
 }
-
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}

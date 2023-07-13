@@ -18,7 +18,6 @@ const ProductDetails = () => {
     } = useContext(productsContext)
     
     const product = getProduct(id)
-    console.log(product)
     
     const isfavorite = checkItemInFavorite(id)
     const ratingChanged = (newRating) => {
@@ -33,7 +32,6 @@ const ProductDetails = () => {
 
     const rate = product.rating ? product.rating.rate : null
     const count = product.rating ? product.rating.count : null
-    console.log(rate)
 
     return (
         <section className="product-details">
