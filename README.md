@@ -31,7 +31,7 @@ Movielife is designed to provide users with a convenient way to explore movies a
 Check out live demo [HERE](https://movielife.netlify.app)
 
 
-![Movielife demo pic](https://github.com/Brag2gr8/MovieLife/assets/58727101/b63a757b-b600-409c-bf10-2621f836eef1)
+![Shoplife Demo](https://github.com/Brag2gr8/shoplife/assets/58727101/c4a5ff81-5cc9-4c95-97bf-2ea01cca3913)
 
 
 ## Installation
