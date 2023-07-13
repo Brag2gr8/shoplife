@@ -121,9 +121,13 @@ const Provider = ({ children }) => {
     };
 
     const removeOrder = (id)=> {
-        setOrders(prev=>
-            prev.filter((item) => item.id !== id)
-        );
+        const confirm = window.confirm("Are you sure you want to delete this order?")
+
+        if (confirm) {
+            setOrders(prev=>
+                prev.filter((item) => item.id !== id)
+            );
+        }
     }
 
     return (

@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 50px;
-    height: 70vh;
+    padding: 50px 10px;
+    min-height: 70vh;
     overflow: auto;
 }
 
@@ -11,26 +11,31 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 10px 10px 0;
+    padding: 0 10px;
     box-shadow: 0 0 5px var(--blue);
 }
 
 .order-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid var(--blue);
+    border-top: 2px solid var(--blue);
     padding: 5px;
+    align-items: center;
+}
+
+.order-item > span:nth-child(1) {
+    margin-right: -100px;
 }
 
 .order-item > span {
     font-size: 20px;
-    font-weight: 500;
-    padding-left: 10px;
-    text-align: center;
+    font-weight: 700;
+    min-width: 100px;
 }
 
 .order-header > span {
     font-weight: 700;
+    border-top: unset;
 }
 
 .delete-order:hover {

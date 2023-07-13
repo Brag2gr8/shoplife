@@ -10,12 +10,10 @@ const Orders = () => {
             <span>{i + 1}.</span>
             <span>${item.price}</span>
             <span>{item.date}</span>
-            <span 
-                className="delete-order"
+            <i
+                className="fa-solid fa-trash-can delete-order"
                 onClick={() => removeOrder(item.id)}
-            >
-                delete
-            </span>
+            ></i>
         </div>)
     })
 
@@ -23,12 +21,6 @@ const Orders = () => {
         <section className="order-page">
             <h2>Order History</h2>
             <div className="order-container">
-                <div className="order-item order-header">
-                    <span>N/A</span>
-                    <span>Total Paid</span>
-                    <span>Order Date</span>
-                    <span>remove</span>
-                </div>
                 {ordersJsx}
             </div>
         </section>
