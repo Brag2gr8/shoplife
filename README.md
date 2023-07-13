@@ -1,4 +1,4 @@
-# Movielife
+# ShopLife
 
 ## Table of Contents
 
