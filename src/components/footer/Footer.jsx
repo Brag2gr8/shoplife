@@ -42,16 +42,16 @@ const Footer = () => {
                 <img className="fakestore-logo" src={fakestore} alt="fakestore logo" />
             </a>
             <div className="social-icons-container">
-                <a href="http://twitter.com/bragthefirst" target="_blank" rel="noopener noreferrer">
+                {/* <a href="http://twitter.com/dev_bragg" target="_blank" rel="noopener noreferrer">
                     <i className="fa-brands fa-twitter"></i>
-                </a>
+                </a> */}
                 <a href="http://linkedin.com/in/brag2" target="_blank" rel="noopener noreferrer">
                     <i className="fa-brands fa-linkedin"></i>
                 </a>
                 <a href="http://github.com/brag2gr8" target="_blank" rel="noopener noreferrer">
                     <i className="fa-brands fa-github"></i>
                 </a>
-                <a href="mailto:brag2gr8@gmail.com" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:brag2gr8@gmail.com?subject=Inquiry&body=Hello%20Emmanuel!" target="_blank" rel="noopener noreferrer">
                     <i className="fa-solid fa-envelope"></i>
                 </a>
             </div>
