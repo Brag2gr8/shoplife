@@ -13,7 +13,7 @@ const Hero = () => {
   }, []);
 
   const addCount = () => {
-    setCount((prev) => (prev === heroData.length - 1 ? 0 : prev + 1));
+    setCount(prev => (prev === heroData.length - 1 ? 0 : prev + 1));
   };
 
   const subCount = () => {
