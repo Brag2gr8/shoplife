@@ -20,11 +20,11 @@ const Checkout = ({cartJsx, totalPrice, coupon, setCoupon, finalPrice, paypal, v
                     </div>
                     <div>
                         <span>Tax</span>
-                        <h5>-${(totalPrice * 0.005).toFixed(2)}</h5>
+                        <h5>+${(totalPrice * 0.005).toFixed(2)}</h5>
                     </div>
                 </div>
                 <div className="coupon">
-                    <h5>Apply Coupon (use "BRAGG" for 10% off)</h5>
+                    <h5>Apply Coupon (use "BRAGG" for 20% off)</h5>
                     <div>
                         <i className="fa-solid fa-gift"></i>
                         <input 

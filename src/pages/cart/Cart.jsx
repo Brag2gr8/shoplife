@@ -63,7 +63,7 @@ const Cart = () => {
         )
     })
 
-    const finalPrice = coupon === "BRAGG" ? (totalPrice * 0.805).toFixed(2) : (totalPrice * 0.995).toFixed(2)
+    const finalPrice = coupon === "BRAGG" ? (totalPrice * 0.805).toFixed(2) : (totalPrice * 1.005).toFixed(2)
 
     const handleSubmit = (e) => {
         e.preventDefault()
